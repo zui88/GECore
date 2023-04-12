@@ -1,0 +1,13 @@
+find_package(OpenGL REQUIRED)
+
+add_executable(BatchRendering
+  src/Main.cpp
+)
+
+target_compile_features(BatchRendering
+  PRIVATE cxx_std_17
+)
+
+target_link_libraries(BatchRendering
+  GECore
+)

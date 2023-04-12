@@ -1,0 +1,4 @@
+* Shader
+- Shader_H system: check if Shader_H already bound -> not have to rebound every time the Shader_H is called
+* Buffer
+- share raw buffer but use different layouts per model

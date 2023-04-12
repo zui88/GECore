@@ -1,0 +1,32 @@
+#include "GECore/Platform/OpenGL/Context.h"
+
+#include "GECore/Core/Logger.h"
+#include "GECore/Core/Core.h"
+
+// mandatory order!
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+
+namespace GECore {
+
+// ToDo: set opengl error function callback
+    OpenGLContext::OpenGLContext(GLFWwindow *window)
+            : GraphicContext(window) {
+        glfwMakeContextCurrent(window);
+
+        GE_CORE_ASSERT(gladLoadGLLoader((GLADloadproc) glfwGetProcAddress), "Failed to initialize GLAD");
+        GE_CORE_INFO("OpenGL {0}, GLSL {1}",
+                     (const char*)glGetString(GL_VERSION),
+                     (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION));
+//        GE_CORE_INFO("OpenGL {0}.{1}", GLVersion.major, GLVersion.minor);
+
+        glfwSwapInterval(1); // Enable vsync
+    }
+
+    void OpenGLContext::makeCurrent() {}
+
+    void OpenGLContext::swapBuffers() {
+        glfwSwapBuffers(m_window);
+    }
+
+} // namespace GECore

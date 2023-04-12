@@ -1,0 +1,24 @@
+[submodule "zui"]
+	path = vendor/zui
+	url = git@github.com:zui88/zui.git
+[submodule "ImGui"]
+	path = vendor/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "assimp"]
+	path = vendor/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "entt"]
+	path = vendor/entt
+	url = https://github.com/skypjack/entt.git
+[submodule "glfw"]
+	path = vendor/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "spdlog"]
+	path = vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "stb"]
+	path = vendor/stb
+	url = https://github.com/nothings/stb.git
+[submodule "glm"]
+	path = vendor/glm
+	url = https://github.com/g-truc/glm.git

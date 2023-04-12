@@ -1,0 +1,10 @@
+### Directories
+build/
+bin/
+bin-int/
+
+### Files
+Makefile
+*.make
+*.out
+*.~

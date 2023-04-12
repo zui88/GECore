@@ -50,6 +50,10 @@ add_library(GECore
       )
 
 target_include_directories(GECore
+  PRIVATE vendor/stb
+)
+
+target_include_directories(GECore
         PRIVATE vendor/stb
         )
 

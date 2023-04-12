@@ -93,7 +93,7 @@ GLuint Shader::link(GLuint vertexShader, GLuint fragmentShader) {
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    GE_CORE_ASSERT("{0}: Linking error\n\n{1}", m_Name, &infoLog[0]);
+    GE_CORE_ERROR("{0}: Linking error\n\n{1}", m_Name, &infoLog[0]);
     return 0;
   }
   glDetachShader(program, vertexShader);

@@ -43,15 +43,17 @@ namespace GECore {
     }
 
 
-    Application::Application() { open(); }
+    Application::Application() {
+      open();
+    }
 
 
     void Application::open() {
         // standart asset path
-        s_Properties.assetPath = "/home/zui/Programming/GraphicEngine/gecore/assets";
+        s_Properties.AssetPath = "/home/zui/Programming/GraphicEngine/gecore/assets";
         const char* ap = std::getenv("GECORE");
         if (ap) {
-	  s_Properties.assetPath = ap;
+	  s_Properties.AssetPath = ap;
 	}
       	
 	GE_CORE_ASSERT(!s_Application, "Application: already exists");

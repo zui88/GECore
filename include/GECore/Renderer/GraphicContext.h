@@ -2,9 +2,10 @@
 
 namespace GECore {
 
-template <typename Window> class GraphicContext {
+template <typename Window>
+class GraphicContext {
 public:
-  GraphicContext(Window *window) : m_window{window} {}
+  GraphicContext(Window *window) : m_window{ window } {}
 
   virtual void makeCurrent() = 0;
   virtual void swapBuffers() = 0;

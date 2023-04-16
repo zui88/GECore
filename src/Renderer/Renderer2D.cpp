@@ -85,7 +85,7 @@ void Renderer2D::Open() {
   s_Data->WhiteTexture->setData(&whiteTextureData, sizeof(whiteTextureData));
 
   // todo: make a asset system
-  std::string assetPath{ Application::GetProperties().assetPath };
+  auto assetPath{ Application::GetProperties().AssetPath };
   s_Data->TextureShader = Shader::Create("TextureShader", (assetPath + "/" + "texture.glsl.vert").c_str(), (assetPath + "/" + "texture.glsl.frag").c_str());
   s_Data->TextureShader->bind();
   s_Data->MAX_TEXUTURE_SLOTS = Renderer::GetNumberOfTextureSlots();

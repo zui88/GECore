@@ -37,7 +37,7 @@ namespace GECore {
 
 
         struct Properties {
-	  std::string assetPath;
+	  std::string AssetPath;
         };
 
  

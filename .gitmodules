@@ -21,5 +21,5 @@
 	url = https://github.com/g-truc/glm.git
 [submodule "imgui"]
 	path = vendor/imgui
-	url = https://github.com/ocornut/imgui.git
+	url = git@github.com:zui88/imgui.git
 	branch = docking

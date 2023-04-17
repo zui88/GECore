@@ -10,9 +10,17 @@ namespace GECore {
    * todo: Description
    */
   FrameBuffer::FrameBuffer(uint32_t width, uint32_t heigth, Mode mode)
-    : m_RendererID{ 0 }, m_Width{ width }, m_Heigt{ heigth } {
+    : m_RendererID{ 0 }, m_Width{ width }, m_Heigth{ heigth }, m_TextureFormatMode{ mode } {
     invalidate();
   }
+
+
+  void FrameBuffer::resize(uint32_t width, uint32_t heigth) {
+    m_Width = width;
+    m_Heigth = heigth;
+    invalidate();
+  }
+
 
   void FrameBuffer::invalidate() {
     if (m_RendererID) {
@@ -20,7 +28,7 @@ namespace GECore {
       glDeleteTextures(m_TextureID.size(), &m_TextureID[0]);
     }
     GLenum internalTextureFormat;
-    switch(mode) {
+    switch(m_TextureFormatMode) {
     case Mode::LDR : internalTextureFormat = GL_RGB; break;
     case Mode::HDR : internalTextureFormat = GL_RGB16F; break;
     default : internalTextureFormat = GL_RGB;
@@ -48,7 +56,7 @@ namespace GECore {
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
   }
 
-  FRAMEBUFFER::~FrameBuffer() {
+  FrameBuffer::~FrameBuffer() {
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glDeleteFramebuffers(1, &m_RendererID);
     glDeleteTextures(m_TextureID.size(), &m_TextureID[0]);
@@ -56,7 +64,7 @@ namespace GECore {
 
   void FrameBuffer::bind() const {
     glBindFramebuffer(GL_FRAMEBUFFER, m_RendererID);
-    glViewport(0, 0, m_Width, m_Heigt);
+    glViewport(0, 0, m_Width, m_Heigth);
   }
 
   void FrameBuffer::unbind() {

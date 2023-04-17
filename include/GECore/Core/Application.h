@@ -10,6 +10,7 @@
 #include "Events/MouseScroll.h"
 
 #include "GECore/Core/Time.h"
+#include "GECore/Core/Core.h"
 
 #include "BasicLayer.h"
 #include "../Renderer/Shader.h"
@@ -180,7 +181,7 @@ namespace GECore {
 
 
   // To be defined in the client
-    std::unique_ptr<Application> CreateApplication();
+    Scope<Application> CreateApplication();
 
 
 } // namespace GECore

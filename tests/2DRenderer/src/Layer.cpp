@@ -11,7 +11,7 @@
 
 void TestLayer::attach() {
     m_CameraController = GECore::OrtographicCameraController::Create(1.f);
-    auto ap{ GECore::Application::GetProperties().assetPath };
+    auto ap{ GECore::Application::GetProperties().AssetPath };
     m_Texture[0] = GECore::Texture2D::Create(ap + "/" + "sun.png");
     m_Texture[1] = GECore::Texture2D::Create(ap + "/" + "sailor-moon.png");
     auto spriteSheet = GECore::Texture2D::Create(ap + "/" + "Attack_1.png");

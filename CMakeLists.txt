@@ -37,6 +37,7 @@ set(RENDER
         src/Renderer/IndexBuffer.cpp
         src/Renderer/VertexArray.cpp
         src/Renderer/Renderer2D.cpp
+        src/Renderer/FrameBuffer.cpp
       )
 
 set(PRIMITIVES

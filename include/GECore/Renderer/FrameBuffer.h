@@ -14,8 +14,8 @@ namespace GECore {
 
     ~FrameBuffer();
 
-    void invalidate();
-
+    void resize(uint32_t width, uint32_t heigth);
+    
     uint32_t getRendererID() const { return m_RendererID; }
 
     void bind() const;
@@ -28,8 +28,11 @@ namespace GECore {
     static void clear();
   
   private:
+    void invalidate();
+
     uint32_t m_RendererID;
-    uint32_t m_Width, m_Heigt;
+    uint32_t m_Width, m_Heigth;
+    Mode m_TextureFormatMode;
     // color and stencil-depth texture
     std::array<uint32_t, 2> m_TextureID;
   };
